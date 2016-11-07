@@ -1,3 +1,13 @@
 language: node_js
 node_js:
-  - "6.1"
+- '6.1'
+deploy:
+  provider: cloudfoundry
+  api: https://api.cf.us10.hana.ondemand.com
+  username: piotr.bochynski@hybris.com
+  password:
+    secure: fXWubnEUT+mpZ/1s/F0q5rxRl2bu5WDwANC+/kixXcKkXAr5PCXqprAKBjGOlbfEJWlXTh1ykID7HG1FqkH7FG7qsgxtLJ3tKfZg7CkaKwMhRmd9vNwmvKopj4n6/uq58pcZogE8HMAlCTYPZdSWluHfvf+a3b57CGnZGwCgjOtit4kOiZS4x/iBAHhvOb8O99hzh4NkvjpDmpUbY+U8NjaKwA42XOlRW7zjfkw3erav9EjfkDQB6kMGvV1VWm4P9LhKSZ7gUv9h181kfEMMedzuUdmlQordC8ivXIZRIZtNc+PdYoZfuAAAO3IQQUptBvcE4L7WY0qFSwKB3GkSUxYrohpJq5GHmxUVmA2ZFT5J2Gt7PCa3qyZxgQ5J7XwdmRFSVXEjGQICMWbaM9ONYLi2zqXIQuNMlSzbNH+o7RAAbRygINEaSMel5QM+AhGx7eHeaxfE/B+LWtCZ9DRF+lgqseJwKTw5udJUWgKlyAV/yVtwDS5OO1JIDsyvG8aQpADvHFrJbFtBZULeZqR3E/YTomb4EHlBXut23dnAQVmGW2FqTEab7m2ceWRc0KU95DowEqy699C82aMvvMiN5DmwY60HvwC1lUQJwLa1OST4xfLjcxbyxLIaZoxga6s31llH/mqAGhj93/3hmZUeeIWKdxKzfFjE9xKNMYMtaGU=
+  organization: smartteam
+  space: dev
+  on:
+    repo: dshop-gliwice/hello-iot

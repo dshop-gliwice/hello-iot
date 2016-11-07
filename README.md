@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dshop-gliwice/hello-iot.svg?branch=master)](https://travis-ci.org/dshop-gliwice/hello-iot)
+
 # hello-iot
 
 ## Install
