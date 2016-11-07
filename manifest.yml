@@ -1,0 +1,7 @@
+---
+applications:
+- name: hello-iot
+  memory: 64M
+  host: hello-iot
+  buildpack: https://github.com/heroku/heroku-buildpack-nodejs
+  command: node index.js
