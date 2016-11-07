@@ -15,4 +15,4 @@ deploy:
   provider: script
   script: cf-blue-green-travis
   on:
-    branch: master
+    branch: develop
