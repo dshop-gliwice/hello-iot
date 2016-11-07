@@ -1,13 +1,18 @@
 language: node_js
 node_js:
 - '6.1'
+sudo: true
+env:
+  global:
+  - CF_APP=hello-iot
+  - CF_API=https://api.cf.us10.hana.ondemand.com
+  - CF_USERNAME=piotr.bochynski@hybris.com
+  - CF_ORGANIZATION=smartteam
+  - CF_SPACE=dev
+  - secure: rSzmEWpWWIirZRu5OygJr/KWwTQAmD+rqN1FsFOJw+uUlMQ4TLqevVc56gXkv5FIdSZrsWTXYBoPqUm8YIryA3Bsus6YsF28nnzUVscG0tb+BWsaJOLRvI2G8jMpJUSt3Ue092lCzC5x2nze5GTxoBIGU2D/2rKLlvZyDjVU0h4QipGRqqDbNCurl2iHd6BXC94sLoafzhviZUavLx6styECwN2s38GVxWH+PBjpHqPBoAWCF5MeLF3pR7677h6ctOkJV7skbvBU5ZoQ5S46jOPQFA5hc0J4Ld7Q1ayNuTrf/chWS+9G/yYVBd1Cq8JjZoX5MwcF7rkUt6rt1AlHZUR6K20RhM3I01T5/gErx5biZ0KSbs6MbyeBrhwFhcnEqGAmgWbQVmFpUsyeDu5TZTJtB+MD8YiS4k3GRdJBA9pBgALSJNYe+ARcJjF04g35c2QDrJMAgambWNNggyxY2uf3U4y2/Ol96N5Iozqt/YdSrFOf/DWMm24Z+Vof8lYk9PEJGqZchAlwBlfEQGOgdqh2FJb94vll8goUj4qxhqAf2FlgNFyb9AYw8omE5ehH1Z7T07p1IYUdapwNbnwV4PnO1upHbZHwTusPxqaMjSeDD6g3DfEnmtUkZxS4v6l/4uNQrflt3Y1DOhIAl/Md5EXjWYQXnadJ2je9Bcl7zKw=
+before_deploy: npm install -g cf-blue-green
 deploy:
-  provider: cloudfoundry
-  api: https://api.cf.us10.hana.ondemand.com
-  username: piotr.bochynski@hybris.com
-  password:
-    secure: fXWubnEUT+mpZ/1s/F0q5rxRl2bu5WDwANC+/kixXcKkXAr5PCXqprAKBjGOlbfEJWlXTh1ykID7HG1FqkH7FG7qsgxtLJ3tKfZg7CkaKwMhRmd9vNwmvKopj4n6/uq58pcZogE8HMAlCTYPZdSWluHfvf+a3b57CGnZGwCgjOtit4kOiZS4x/iBAHhvOb8O99hzh4NkvjpDmpUbY+U8NjaKwA42XOlRW7zjfkw3erav9EjfkDQB6kMGvV1VWm4P9LhKSZ7gUv9h181kfEMMedzuUdmlQordC8ivXIZRIZtNc+PdYoZfuAAAO3IQQUptBvcE4L7WY0qFSwKB3GkSUxYrohpJq5GHmxUVmA2ZFT5J2Gt7PCa3qyZxgQ5J7XwdmRFSVXEjGQICMWbaM9ONYLi2zqXIQuNMlSzbNH+o7RAAbRygINEaSMel5QM+AhGx7eHeaxfE/B+LWtCZ9DRF+lgqseJwKTw5udJUWgKlyAV/yVtwDS5OO1JIDsyvG8aQpADvHFrJbFtBZULeZqR3E/YTomb4EHlBXut23dnAQVmGW2FqTEab7m2ceWRc0KU95DowEqy699C82aMvvMiN5DmwY60HvwC1lUQJwLa1OST4xfLjcxbyxLIaZoxga6s31llH/mqAGhj93/3hmZUeeIWKdxKzfFjE9xKNMYMtaGU=
-  organization: smartteam
-  space: dev
+  provider: script
+  script: cf-blue-green-travis
   on:
-    repo: dshop-gliwice/hello-iot
+    branch: master
