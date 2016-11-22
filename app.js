@@ -16,7 +16,7 @@ app.get('/hello', function (req, res) {
 })
 
 app.post('/ranking', function (req, res) {
-    if (ranking.length<20 && req.body.name) {
+    if (ranking.length<20 && req.body.name && req.body.name.indexOf('hybris')>0) {
         ranking.push({name: req.body.name, time: new Date().toISOString()})
     }
     res.send({ranking: ranking.length});
