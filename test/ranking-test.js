@@ -31,6 +31,16 @@ describe('Ranking endpoint', function () {
                 done();
             });
     });
+    it('should not create 3rd entry for Paul', function (done) {
+
+        request(app)
+            .post('/ranking')
+            .send({name:'Paul'})
+            .end(function(err,res){
+                res.body.should.have.property('ranking',-1);
+                done();
+            });
+    });
 
 });
 
