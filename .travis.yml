@@ -8,8 +8,7 @@ env:
   - CF_API=https://api.cf.us10.hana.ondemand.com
   - CF_USERNAME=piotr.bochynski@hybris.com
   - CF_ORGANIZATION=smartteam
-  - CF_SPACE=dev
-  - secure: rSzmEWpWWIirZRu5OygJr/KWwTQAmD+rqN1FsFOJw+uUlMQ4TLqevVc56gXkv5FIdSZrsWTXYBoPqUm8YIryA3Bsus6YsF28nnzUVscG0tb+BWsaJOLRvI2G8jMpJUSt3Ue092lCzC5x2nze5GTxoBIGU2D/2rKLlvZyDjVU0h4QipGRqqDbNCurl2iHd6BXC94sLoafzhviZUavLx6styECwN2s38GVxWH+PBjpHqPBoAWCF5MeLF3pR7677h6ctOkJV7skbvBU5ZoQ5S46jOPQFA5hc0J4Ld7Q1ayNuTrf/chWS+9G/yYVBd1Cq8JjZoX5MwcF7rkUt6rt1AlHZUR6K20RhM3I01T5/gErx5biZ0KSbs6MbyeBrhwFhcnEqGAmgWbQVmFpUsyeDu5TZTJtB+MD8YiS4k3GRdJBA9pBgALSJNYe+ARcJjF04g35c2QDrJMAgambWNNggyxY2uf3U4y2/Ol96N5Iozqt/YdSrFOf/DWMm24Z+Vof8lYk9PEJGqZchAlwBlfEQGOgdqh2FJb94vll8goUj4qxhqAf2FlgNFyb9AYw8omE5ehH1Z7T07p1IYUdapwNbnwV4PnO1upHbZHwTusPxqaMjSeDD6g3DfEnmtUkZxS4v6l/4uNQrflt3Y1DOhIAl/Md5EXjWYQXnadJ2je9Bcl7zKw=
+  - CF_SPACE=dev  
 before_deploy: npm install -g cf-blue-green
 deploy:
   provider: script
