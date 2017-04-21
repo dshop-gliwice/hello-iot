@@ -2,6 +2,7 @@
 applications:
 - name: hello-iot
   memory: 64M
+  domain: cfapps.us10.hana.ondemand.com
   host: hello-iot
   buildpack: https://github.com/heroku/heroku-buildpack-nodejs
   command: node index.js
